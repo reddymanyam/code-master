@@ -15,7 +15,7 @@ const Navbar = () => {
         <AppBar position="static">
       <Toolbar sx={{ display: "flex", padding: "5px" }}>
         <Typography variant='h5' component="h4" sx={{ fontWeight: "bold" }}>
-        <Link to="/"  style={{ textDecoration: 'none', color: 'inherit' }}> Code Master </Link> 
+         Code Master 
         </Typography>
         <Typography variant='h5' component="h4" sx={{  marginLeft: "35px" }}>
          <Link to="/explore"  style={{ textDecoration: 'none', color: 'inherit' }}> Explore </Link>
