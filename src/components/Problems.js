@@ -1,4 +1,6 @@
+import { Button } from '@mui/material';
 import React, { useState } from 'react';
+import {Link} from "react-router-dom"
 
 const Problems = () => {
   const problems = [
@@ -62,16 +64,18 @@ const Problems = () => {
         <div key={problem.id} style={{ padding: '20px', width: '100%', border: '1px solid #ccc', borderRadius: '8px', marginBottom: '10px' }}>
           <h1>{problem.title}</h1>
           <p>{problem.description}</p>
-          <button onClick={() => toggleHint(index)} style={{ margin: '10px 0', padding: '5px 20px' }}>
+          <Button variant='contained' color='primary' component ={Link} to="/codeeditor" style={{textDecoration:"none", marginRight:"20px"}}>Code Here</Button>
+          <Button variant='contained' color='primary' onClick={() => toggleHint(index)} style={{ marginRight:"20px" }}>
             {hintsShown[index] ? 'Hide Hint' : 'Show Hint'}
-          </button>
+          </Button>
           {hintsShown[index] && <p style={{ backgroundColor: '#f0f0f0', padding: '10px', borderRadius: '5px' }}>{problem.hint}</p>}
-          <button onClick={() => toggleSolution(index)} style={{ margin: '10px 0', padding: '5px 20px' }}>
+          <Button variant='contained' color='primary' onClick={() => toggleSolution(index)} >
             {solutionsShown[index] ? 'Hide Solution' : 'Show Solution'}
-          </button>
+          </Button>
           {solutionsShown[index] && <pre style={{ backgroundColor: '#f0f0f0', padding: '10px', borderRadius: '5px' }}>{problem.solution}</pre>}
         </div>
       ))}
+      
     </div>
   );
 };
